@@ -105,8 +105,7 @@ h3 {
     padding-right: 30px; }
 
 #portfolio p {
-  text-align: center;
-  padding-top: 10px; }
+  text-align: center; }
 #portfolio img {
   height: auto;
   max-width: 100%; }
@@ -562,11 +561,11 @@ a.bb-custom-icon {
       clear: both;
       padding-top: 20px; } }
 
-#who-we-are img {
+#who-we-are img, #how-we-invest img {
   max-width: 80%;
   cursor: pointer; }
   @media (max-width: 768px) {
-    #who-we-are img {
+    #who-we-are img, #how-we-invest img {
       max-width: 100px;
       margin-left: 40px; } }
 
