@@ -1,0 +1,215 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MadDog</title>
+  <meta name="description" content="MadDog Venture Capital">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap2.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/redux.css">
+  <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <script src="js/modernizr.custom.js"></script>
+  
+</head>
+<body data-spy="scroll" data-target="#navbar" >
+  <div id="cover" class="full">
+      <div id="backLayer"></div>
+      <div class="container" style="position: relative; height: 100%;">
+        <div id="headline" class="bebasn">
+          <h1><span class="top-line">MadDog Venture Capital - 5.1.2016</h1>
+        </div>
+      </div>
+      <div id="frontLayer"></div>
+  </div>
+  <nav id="nav_bar" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><img src="/img/maddoglogos.png"/ ></a>
+        </div>
+	  </div>
+  
+  <!-- /container -->
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+  var turnOnLight = function(turnon){
+    var classlist = ".windows .window.off";
+    if(!turnon){
+      classlist = ".windows .window.on";
+    }
+    var windows = $(classlist);
+    if(windows.length > 0){
+      var w = windows[Math.floor(Math.random()*windows.length)];
+      if(turnon){
+        w.classList.remove("off");
+        w.classList.add("on");
+      } else {
+        w.classList.remove("on");
+        w.classList.add("off");
+      }
+    } else {
+      turnon = !turnon;
+    }
+    setTimeout(function(){ turnOnLight(turnon) }, 250);
+  }
+
+  $(document).ready(function() {
+    var height = $("#cover").height();
+
+    $(window).resize(function(e) {
+      height = $("#cover").height();
+    });
+
+    $(window).scroll(function () { 
+      if ($(window).scrollTop() > height) {
+        $('#nav_bar').addClass('navbar-fixed-top');
+        $("#content").css("margin-top", "75px");
+      }
+
+      if ($(window).scrollTop() <= height) {
+        $('#nav_bar').removeClass('navbar-fixed-top');
+        $("#content").css("margin-top", "0px");
+      }
+    });
+
+    $(".hover-block").on("mouseover", function(){
+      if(window.innerWidth<=768){
+        return;
+      }
+      $(this).find(".show-block").removeClass('hide');
+    });
+
+    $(".hover-block").on("mouseout", function(){
+      if(window.innerWidth<=768){
+        return;
+      }
+      $(this).find(".show-block").addClass('hide');
+    })
+
+    $("#what-we-do").on("click", ".what", function(){
+      $(".what").removeClass("active");
+      $(this).addClass("active");
+      $(".what-text .text").html($(this).data('text'));
+    })
+
+    $("svg#what-svg .click").on('click', function(){
+      $("#what-svg .click").find("path, circle, text, polygon, rect").css("fill", "#A3A2A2");
+      $("#what-desc > div").addClass("hidden");
+      $("#what-desc ."+$(this).data('cat')).removeClass("hidden");
+      $(this).find("path, circle, text, polygon, rect").css("fill", "#A32531");
+    })
+
+    turnOnLight(true);
+  });
+  </script>
+
+  <script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
+  <script type="text/javascript" src="js/AnimatedCloudLayer.js"></script>
+
+    <script type="text/javascript">
+      
+      // Going below 20 fps makes the animation choppy.
+      var backLayer = new AnimatedCloudLayer({
+        fps: 20,
+        images: ['img/cloud2.png','img/Cloud400.png'],
+        elid: "backLayer",
+        num_clouds: 50,
+        height: 600
+      });
+      var frontLayer = new AnimatedCloudLayer({
+        fps: 20,
+        images: ['img/cloud6.png'],
+        elid: "frontLayer",
+        num_clouds: 10,
+        height: 600
+      });
+
+    </script>
+    
+    <script src="js/jquerypp.custom.js"></script>
+    <script src="js/jquery.bookblock.js"></script>
+    <script>
+      var Page = (function() {
+        
+        var config = {
+            $bookBlock : $( '#bb-bookblock' ),
+            $navNext : $( '#bb-nav-next' ),
+            $navPrev : $( '#bb-nav-prev' )
+          },
+          init = function() {
+            config.$bookBlock.bookblock( {
+              speed : 800,
+              shadowSides : 0.8,
+              shadowFlip : 0.7
+            } );
+            initEvents();
+          },
+          initEvents = function() {
+            
+            var $slides = config.$bookBlock.children();
+
+            // add navigation events
+            config.$navPrev.on( 'click touchstart', function() {
+              if($(".bb-item.first").css('display') == 'block'){
+                return false;
+              }
+              config.$bookBlock.bookblock( 'prev' );
+              return false;
+            } );
+
+            config.$navNext.on( 'click touchstart', function() {
+              config.$bookBlock.bookblock( 'next' );
+              return false;
+            } );
+            
+            // add swipe events
+            $slides.on( {
+              'swipeleft' : function( event ) {
+                config.$bookBlock.bookblock( 'next' );
+                return false;
+              },
+              'swiperight' : function( event ) {
+                if($(".bb-item.first").css('display') == 'block'){
+                  return false;
+                }
+                config.$bookBlock.bookblock( 'prev' );
+                return false;
+              }
+            } );
+
+            // add keyboard events
+            $( document ).keydown( function(e) {
+              var keyCode = e.keyCode || e.which,
+                arrow = {
+                  left : 37,
+                  up : 38,
+                  right : 39,
+                  down : 40
+                };
+
+              switch (keyCode) {
+                case arrow.left:
+                  config.$bookBlock.bookblock( 'prev' );
+                  break;
+                case arrow.right:
+                  config.$bookBlock.bookblock( 'next' );
+                  break;
+              }
+            } );
+          };
+
+          return { init : init };
+
+      })();
+    </script>
+    <script>
+        Page.init();
+    </script>
+</body>
+</html>
