@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/bootstrap2.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/maddogvc.css">
-  <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
   <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Oswald:400,700,300' rel='stylesheet' type='text/css'>
   <script src="js/modernizr.custom.js"></script>
   
@@ -25,8 +24,7 @@
   <nav id="nav_bar" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/"><img src="img/maddogvc.png"/ ></a>
-		  <a class="navbar-brand" href="/"><img src="img/pawicon.png"/ ></a>
+          <a class="navbar-brand" href="/"><img src="img/maddogvc.png"/ ><img src="img/pawicon.png"/ ></a>
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav navbar-right">
@@ -41,7 +39,6 @@
         </div><!--/.nav-collapse -->
       </div>
   </nav>
-<!----------------------------------------------------------------------------->
   <div id="content">
 	  <div id="who-we-are" class="container">
 		  <div class="row">
@@ -102,7 +99,6 @@
 	<div class="text-center" style="margin-top: 50px;">
 	  <img class='madpic' src="img/maddogteam.png" alt="MadDog Team" >
 	</div>
-<!----------------------------------------------------------------------------->
 	<div id="content">
       <div id="how-we-invest" class="container">
         <div class="row">
@@ -165,7 +161,6 @@
         </div>
         </div>
       </div>
-<!----------------------------------------------------------------------------->
       <div id="what-we-do" class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -365,7 +360,6 @@
 		  </div>
 		 </div>
 		</div>
-<!----------------------------------------------------------------------------->
       <div id="partners" class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -373,7 +367,7 @@
             <hr class="maddogred"/>
             </div>
           <div class="col-xs-12">
-            <img src="img/building-infograph-partner.png" alt="partners" style="max-width:100%;"/>
+            <img src="img/building-infograph-partner2.png" alt="partners" style="max-width:100%;"/>
             <svg class="windows" xmlns="http://www.w3.org/2000/svg"
      width="100%" height="100%"
      viewBox="0 0 1932 899">
@@ -1190,21 +1184,21 @@
 <path id="ent-line"
         fill="none" stroke="none" stroke-width="1"
         d="M 613.50,258.00
-           C 613.50,258.00 552.00,195.00 552.00,195.00
-             552.00,195.00 13.00,194.50 14.00,194.50" />
+           C 613.50,258.00 552.00,195.50 552.00,195.50
+             552.00,195.50 17.00,195.50 18.00,195.50" />
 <path id="vent-line"
         fill="none" stroke="none" stroke-width="1"
         d="M 1261.50,201.00
            C 1261.50,201.00 1347.00,115.50 1347.00,115.50
-             1347.00,115.50 1912.00,114.50 1912.00,114.50" />
+             1347.00,115.50 1910.00,114.50 1910.00,114.50" />
 <path id="entr-line"
         fill="none" stroke="none" stroke-width="1"
         d="M 967.50,589.50
-           C 967.50,589.50 1041.00,666.00 1041.00,666.00
-             1041.00,666.00 1696.00,666.00 1696.00,666.00" />
-<circle id="light" filter="url(#blurLight)" fill="#626262" cx="0" cy="0" r="3"/>
-<circle id="vlight" filter="url(#blurLight)" fill="#626262" cx="0" cy="0" r="4"/>
-<circle id="elight" filter="url(#blurLight)" fill="#626262" cx="0" cy="0" r="3"/>
+           C 967.50,589.50 1041.00,663.00 1041.00,663.00
+             1041.00,663.00 1694.00,663.00 1694.00,663.00" />
+<circle id="light" filter="url(#blurLight)" fill="#FF8990" cx="0" cy="0" r="3"/>
+<circle id="vlight" filter="url(#blurLight)" fill="#FF8990" cx="0" cy="0" r="4"/>
+<circle id="elight" filter="url(#blurLight)" fill="#FF8990" cx="0" cy="0" r="3"/>
     <animateMotion 
            xlink:href="#light"
            dur="2s"
@@ -1266,7 +1260,6 @@
 		 </div>
         </div>
        </div>
-<!----------------------------------------------------------------------------->
       <div id="portfolio" class="gray-row">
         <div class="container">
         <div class="row">
@@ -1346,7 +1339,6 @@
 	   </div>
       </div>
     </div>
-	<!----------------------------------------------------------------------------->
       <div class="footer text-center">
           <h4>Contact us to explore a potential investment.</h4>
           <p>
@@ -1471,84 +1463,6 @@
     </script>
     
     <script src="js/jquerypp.custom.js"></script>
-    <script src="js/jquery.bookblock.js"></script>
-    <script>
-      var Page = (function() {
-        
-        var config = {
-            $bookBlock : $( '#bb-bookblock' ),
-            $navNext : $( '#bb-nav-next' ),
-            $navPrev : $( '#bb-nav-prev' )
-          },
-          init = function() {
-            config.$bookBlock.bookblock( {
-              speed : 800,
-              shadowSides : 0.8,
-              shadowFlip : 0.7
-            } );
-            initEvents();
-          },
-          initEvents = function() {
-            
-            var $slides = config.$bookBlock.children();
-
-            // add navigation events
-            config.$navPrev.on( 'click touchstart', function() {
-              if($(".bb-item.first").css('display') == 'block'){
-                return false;
-              }
-              config.$bookBlock.bookblock( 'prev' );
-              return false;
-            } );
-
-            config.$navNext.on( 'click touchstart', function() {
-              config.$bookBlock.bookblock( 'next' );
-              return false;
-            } );
-            
-            // add swipe events
-            $slides.on( {
-              'swipeleft' : function( event ) {
-                config.$bookBlock.bookblock( 'next' );
-                return false;
-              },
-              'swiperight' : function( event ) {
-                if($(".bb-item.first").css('display') == 'block'){
-                  return false;
-                }
-                config.$bookBlock.bookblock( 'prev' );
-                return false;
-              }
-            } );
-
-            // add keyboard events
-            $( document ).keydown( function(e) {
-              var keyCode = e.keyCode || e.which,
-                arrow = {
-                  left : 37,
-                  up : 38,
-                  right : 39,
-                  down : 40
-                };
-
-              switch (keyCode) {
-                case arrow.left:
-                  config.$bookBlock.bookblock( 'prev' );
-                  break;
-                case arrow.right:
-                  config.$bookBlock.bookblock( 'next' );
-                  break;
-              }
-            } );
-          };
-
-          return { init : init };
-
-      })();
-    </script>
-    <script>
-        Page.init();
-    </script>
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

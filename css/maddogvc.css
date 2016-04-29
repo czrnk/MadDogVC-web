@@ -93,7 +93,7 @@ h3 {
   #partners .window.off {
     fill: #4E4E56; }
   #partners .window.on {
-    fill: #FFFCDA; }
+    fill: #E6E6E6; }
 
 .partners h3, .partners h4, .partners h5, .partners h6 {
   text-transform: uppercase; }
@@ -172,6 +172,8 @@ h3 {
 
 .navbar-brand {
   padding: 7px 15px; }
+.navbar-brand img{
+  display: inline-block; }
 
 .navbar-default {
   border-top: 1px solid #ddd;
