@@ -79,7 +79,7 @@ h3 {
   padding-top: 30px; }
 
 #partners p, #portfolio p {
-  max-width: 250px;
+  max-width: 300px;
   margin: auto;
   padding-bottom: 30px; }
 
@@ -110,8 +110,8 @@ h3 {
   height: auto;
   max-width: 100%; }
 #portfolio .prj {
-  margin: 0 50px 50px;
-  padding: 20px 20px 0px;
+  margin: 0 2% 50px;
+  padding: 2% 2% 0px;
   border: 2px solid transparent;
   height: 325px;
   background-color: #fff; }
@@ -211,29 +211,11 @@ h3 {
 #frontLayer {
   z-index: 3; }
 
-#headline {
-  position: absolute;
-  z-index: 2;
-  top: 20%;
-  left: 10%;
-  text-align: left;
-  text-transform: uppercase;
-  font-weight: normal; }
-  #headline h1 {
-    font-family: ‘Roboto’, sans-serif;
-    font-size: 90px;
-/*    font-weight: bold; */
-    color: #AF0923;
-    line-height: 1; }
-    @media (max-width: 700px) {
-      #headline h1 {
-        font-size: 60px; } }
-    @media (max-width: 600px) {
-      #headline h1 {
-        font-size: 45px; } }
+img#headline {
+  max-width:100%;
+  max-height: 100%;
+}
 
-#cover.full #headline {
-  top: 40%; }
 
 #book-container {
   width: 90%;
@@ -260,9 +242,12 @@ a.bb-custom-icon {
   #flip-instructions p {
     font-size: 10px; } }
 
-.quote {
-  font-style: italic;
-  font-size: 20px; }
+blockquote 
+{ border-left: 10px solid #AF0923; font-style: italic; }
+
+blockquote .fa-quote-left
+{ color: #ccc; }
+
 
 #map {
   text-align: center;
@@ -311,37 +296,35 @@ a.bb-custom-icon {
     text-align: center;
     margin-top: 30px;
 }
+.tile-name {
+  color: #AF0923;
+  font-family: 'Oswald';
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.tile-name a { color: #AF0923; }
 .tile-image {
-    width: 26%;
+    width: 25%;
     display: inline-block;
     margin: auto;
     float: center;
     padding: 25px;
 }
 .tile-image .tile-image-cont {
-    height: 300px;
+    margin-bottom: 10px;
 }
 .tile-image .tile-image-cont img {
     height: auto;
-    max-height: 200%;
+    max-height: 100%;
     width: auto;
-    max-width: 200%;
+    max-width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
-.tile-image2 {
-    width: 25%;
-    display: inline-block;
-    margin: auto;
+#row2 .tile-image {
+    padding: 10px;
     float: left;
-    padding: 25px;
-}
-.tile-image2 .tile-image-cont2 {
-    height: 350px;
-}
-.tile-image2 .tile-image-cont2 img {
-    height: auto;
-    max-height: 200%;
-    width: auto;
-    max-width: 200%;
 }
 
 /* Main  */
@@ -559,13 +542,17 @@ a.bb-custom-icon {
       width: 100%;
       display: block;
       clear: both;
-      padding-top: 20px; } }
+     padding-top: 20px; } 
+     .hover-block h4 {
+      display: none;
+     }
+  }
 
-#who-we-are img, #how-we-invest img {
+#how-we-invest img {
   max-width: 80%;
   cursor: pointer; }
   @media (max-width: 768px) {
-    #who-we-are img, #how-we-invest img {
+    #how-we-invest img {
       max-width: 100px;
       margin-left: 40px; } }
 
@@ -679,6 +666,7 @@ img.headshot {
 
 img.madpic {
     width: auto;
-    height: auto; }
+    height: auto;
+    max-width: 100%; }
 
 /*# sourceMappingURL=redux.css.map */
