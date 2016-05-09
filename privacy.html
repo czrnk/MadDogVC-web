@@ -1,0 +1,207 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Privacy | MadDog</title>
+  <meta name="description" content="MadDog">
+  <meta name="viewport" content="width=1280">
+  <link rel="stylesheet" href="css/bootstrap2.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/maddogvc.css">
+  <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <script src="js/modernizr.custom.js"></script>
+
+</head>
+<body>
+  <div id="cover">
+      <div id="backLayer"></div>
+      <div class="container" style="position: relative; height: 100%;">
+        <img id="headline" alt="MadDog Ventures" src="img/maddogvcheader.png"/>
+      </div>
+      <div id="frontLayer"></div>
+  </div>
+  <nav id="nav_bar" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="img/maddogvc.png"/></a>
+		</div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html#who-we-are">who we are</a></li>
+			<li><a href="index.html#how-we-invest">invest</a></li>
+            <li><a href="index.html#what-we-do">grow</a></li>
+            <li><a href="index.html#partners">partner</a></li>
+			<li><a href="index.html#portfolio">portfolio</a></li>
+			<li><a href="press.html">press</a></li>
+            <li><a href="contact.html">contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+      <div id="content">
+        <div class="container" >
+          <div class="row">
+		<h2> Your Privacy and Information Collected via the Website</h2>
+		  <h3>Effective 5/9/2016</h3>
+		  
+		  <p>Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.</p>
+		  
+		  <p>Mad Dog Ventures does not collect any personally identifiable information about visitors to the its website. If you submit an inquiry to info@maddogtechnology.com, we may collect your email address for purposes of responding to your inquiry</p>
+		<p>This website is owned and operated by Mad Dog Ventures. Any issues regarding this website should be addressed to: Mad Dog Venture Capital LLC, 233 Pierce St., Birmingham, MI 48009; phone 1+ 248.686.090030; or email info@maddogtechnology.com.</p>
+	 </div>
+        </div>
+      </div>
+      <div class="copyright">
+          <div class="secondary-nav">
+            <a href="index.html#who-we-are">who we are</a>|
+			<a href="index.html#what-we-do">invest</a>|
+			<a href="index.html#how-we-invest">grow</a>|
+            <a href="index.html#partners">partner</a>|
+            <a href="index.html#portfolio">portfolio</a>|
+			<a href="press.html">press</a>|
+			<a href="terms.html">terms of use</a>|
+			<a href="privacy.html">privacy</a>|
+            <a href="contact.html">contact</a>|
+          </div>
+          <p class="legal">copyright &copy; 2016 MadDog Ventures</p>
+      </div>
+
+  <!-- /container -->
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    var height = $("#cover").height();
+
+    $(window).resize(function(e) {
+      height = $("#cover").height();
+    });
+
+    $(window).scroll(function () { 
+      if ($(window).scrollTop() > height) {
+        $('#nav_bar').addClass('navbar-fixed-top');
+        $("#content").css("margin-top", "75px");
+      }
+
+      if ($(window).scrollTop() <= height) {
+        $('#nav_bar').removeClass('navbar-fixed-top');
+        $("#content").css("margin-top", "0px");
+      }
+    });
+  });
+  </script>
+
+
+  <script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
+  <script type="text/javascript" src="js/AnimatedCloudLayer.js"></script>
+
+    <script type="text/javascript">
+      
+      // Going below 20 fps makes the animation choppy.
+      var backLayer = new AnimatedCloudLayer({
+        fps: 20,
+        images: ['img/cloud2.png','img/Cloud400.png'],
+        elid: "backLayer",
+        num_clouds: 50
+      });
+      var frontLayer = new AnimatedCloudLayer({
+        fps: 20,
+        images: ['img/cloud6.png'],
+        elid: "frontLayer",
+        num_clouds: 10
+      });
+
+    </script>
+    
+    <script src="js/jquerypp.custom.js"></script>
+    <script src="js/jquery.bookblock.js"></script>
+    <script>
+      var Page = (function() {
+        
+        var config = {
+            $bookBlock : $( '#bb-bookblock' ),
+            $navNext : $( '#bb-nav-next' ),
+            $navPrev : $( '#bb-nav-prev' )
+          },
+          init = function() {
+            config.$bookBlock.bookblock( {
+              speed : 800,
+              shadowSides : 0.8,
+              shadowFlip : 0.7
+            } );
+            initEvents();
+          },
+          initEvents = function() {
+            
+            var $slides = config.$bookBlock.children();
+
+            // add navigation events
+            config.$navPrev.on( 'click touchstart', function() {
+              if($(".bb-item.first").css('display') == 'block'){
+                return false;
+              }
+              config.$bookBlock.bookblock( 'prev' );
+              return false;
+            } );
+
+            config.$navNext.on( 'click touchstart', function() {
+              config.$bookBlock.bookblock( 'next' );
+              return false;
+            } );
+            
+            // add swipe events
+            $slides.on( {
+              'swipeleft' : function( event ) {
+                config.$bookBlock.bookblock( 'next' );
+                return false;
+              },
+              'swiperight' : function( event ) {
+                if($(".bb-item.first").css('display') == 'block'){
+                  return false;
+                }
+                config.$bookBlock.bookblock( 'prev' );
+                return false;
+              }
+            } );
+
+            // add keyboard events
+            $( document ).keydown( function(e) {
+              var keyCode = e.keyCode || e.which,
+                arrow = {
+                  left : 37,
+                  up : 38,
+                  right : 39,
+                  down : 40
+                };
+
+              switch (keyCode) {
+                case arrow.left:
+                  config.$bookBlock.bookblock( 'prev' );
+                  break;
+                case arrow.right:
+                  config.$bookBlock.bookblock( 'next' );
+                  break;
+              }
+            } );
+          };
+
+          return { init : init };
+
+      })();
+    </script>
+    <script>
+        Page.init();
+    </script>
+</body>
+</html>
